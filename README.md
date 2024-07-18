@@ -1,95 +1,62 @@
-# unofficial LINE Bot うぱるぱ
+<h1>Aria helper</h1>
+<p>Aria helper is a Python project for the CHRLINE version. The service started in 2018 as a closed source project, but in 2022 I decided to rewrite it in python and make it open source which is what this project is all about, and I used the CHRLINE api because it's the most practical and easiest to use!</p>
 
-This bot operates on a **personal account**, not an official LINE account.
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#install">Install</a></li>
+  <li><a href="#install-submodules">Install submodules</a></li>
+  <li><a href="#demonstration">Demonstration</a></li>
+  <li><a href="#api-copyright">API Copyright</a></li>
+  <li><a href="#license">License</a></li>
+  <li><a href="#sponsor">Sponsor</a></li>
+  <li><a href="#donations">Donations</a></li>
+</ul>
 
-Used [CHRLINE](https://github.com/DeachSword/CHRLINE).
+<h2 id="install">Install</h2>
+<p>To use Aria helper, make sure you have the following dependencies installed on your system:</p>
+<ol>
+  <li><a href="https://python.org">Python 3.x</a> - Ensure you have Python 3.x installed on your system.</li>
+  <li><a href="https://visualstudio.microsoft.com/downloads">VC++ build tools</a> 2015 or Latest Version (Windows only)
+    - Required for Windows users.</li>
+  <li><a href="https://rust-lang.org">Rust</a> - Ensure you have Rust installed on your system.</li>
+</ol>
 
-You can add this account [here](https://line.me/R/nv/profilePopup/mid=uaf64c300fb85813724ab77a2748502f6).
+<h2 id="install-submodules">Install submodules</h2>
+<p>You can clone the repository along with its submodules using the following Git command:</p>
+<pre><code>git clone --recurse-submodules -j8 https://github.com/YiJhu/Aria_helper.git</code></pre>
+<p>Alternatively, you can install the required submodules using Python:</p>
+<pre><code>pip install -r requirements.txt</code></pre>
 
-## Technology
+<h2 id="demonstration">Demonstration</h2>
+<p>A demo bot is available to try out Aria helper functionality directly. You can access the demo bot by clicking on
+  the following:</p>
+<a href="https://line.me/R/ti/p/g3c8dOwDFb"><img src="https://github.com/YiJhu/Aria_helper/blob/main/docs/demon.png"
+    alt="Demo Bot"></a>
+<a href="https://line.me/R/ti/p/g3c8dOwDFb"><img src="https://github.com/YiJhu/Aria_helper/blob/main/docs/add.png"
+    alt="Add Bot"></a>
 
-- Python 3.10 - 3.12
-- MySQL 5.7
-- SQLAlchemy (ORM tool)
-- alembic (migration tool)
+<h2 id="api-copyright">API Copyright</h2>
+<p>The project utilizes the <a href="https://github.com/DeachSword/CHRLINE">CHRLINE</a> API, which is copyrighted by
+ <a href="https://github.com/DeachSword">DeachSword</a>.</p>
 
-## Linter & formatter
+<h2 id="license">License</h2>
+<p>The project is licensed under the following license:</p>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FYiJhu%2FAria_helper?ref=badge_large"><img
+    src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FYiJhu%2FAria_helper.svg?type=large"
+    alt="FOSSA Status"></a>
 
-- black
-- isort
-- flake8
-- mypy
+<h2 id="sponsor">Sponsor</h2>
+<p>If you find the project useful, you can sponsor it through the following platforms:</p>
+<ul>
+  <li><a href="https://www.paypal.me/YiJhu486/">PayPal</a></li>
+  <li><a href="https://www.jkopay.com/transfer?j=Transfer:908589779">街口支付</a></li>
+  <li><a href="https://ko-fi.com/Z8Z5D0PMY">Ko-fi</a></li>
+  <li><a href="https://liberapay.com/LH/donate">Liberapay</a></li>
+</ul>
 
-## Usage with command line arguments
-
-```bash
-$ python main.py --help
-
-usage: main.py [-h] [-c CONFIG_NAME] [-d DEVICE] [-t TOKEN] [-l LOG_NAME] [-dh DB_HOST] [-dp DB_PORT] [-du DB_USER] [-dpass DB_PASSWORD] [-dd DB_DATABASE]
-               [-dc DB_CHARSET]
-options:
-  -h, --help            show this help message and exit
-  -c CONFIG_NAME, --config-name CONFIG_NAME
-                        設定名
-  -d DEVICE, --device DEVICE
-                        デバイス名
-  -t TOKEN, --token TOKEN
-                        トークン
-  -l LOG_NAME, --log-name LOG_NAME
-                        ログファイル名
-  -dh DB_HOST, --db-host DB_HOST
-                        DBのホスト
-  -dp DB_PORT, --db-port DB_PORT
-                        DBのポート
-  -du DB_USER, --db-user DB_USER
-                        DBのユーザー名
-  -dpass DB_PASSWORD, --db-password DB_PASSWORD
-                        DBのパスワード
-  -dd DB_DATABASE, --db-database DB_DATABASE
-                        DBのデータベース名
-  -dc DB_CHARSET, --db-charset DB_CHARSET
-                        DBの文字コード
-```
-
-## Usage with config file　(recommendation)
-
-```bash
-$ cp config.example.json config.json
-```
-
-Write configuration information in `config.json`.
-
-If command line arguments are also used, the values of the command line arguments take precedence.
-
-ex.
-
-```json
-{
-    "default": {
-        "device": "IOSIPAD",
-        "token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-        "log_name": "linebot",
-        "db_host": "127.0.0.1",
-        "db_port": "13307",
-        "db_user": "admin",
-        "db_password": "password",
-        "db_database": "nanato12_linebot",
-        "db_charset": "utf8mb4"
-    }
-}
-```
-
-## Local setup with venv
-
-```bash
-$ docker compose up -d
-$ python3.12 -m venv venv
-$ . venv/bin/activate
-(venv) $ make init
-(venv) $ make migrate
-(venv) $ make run
-```
-
-## Operation Example
-
-![profile command](docs/images/profile.png)
+<h2 id="donations">Donations</h2>
+<p>If you wish to make a cryptocurrency donation, you can send USDT (Torn/TRC20) to the following address:</p>
+<pre>TAWJus92Crqdnm8MVw2HmoNEg4wq9WPDFH
+</pre>
+<p>or you can send  BTC (Bitcion) to the following address:</p>
+<pre>1MCSmbhEVk9x4qgehho9fJeTEcCVyWbksd</pre>

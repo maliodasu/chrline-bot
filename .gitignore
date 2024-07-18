@@ -128,22 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# docker
-docker/mysql
-config.json
 
-# log
-logs
-run.pid
-
-# test
-/*test*.py
-
-# CHRLINE secret data
-/.data
-/.e2eeKeys
-/.images
-/.database
-/.e2eeGroupKeys
-/.e2eePublicKeys
-/.refreshToken
+# Visual Studio Code
+.vscode
